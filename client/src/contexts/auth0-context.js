@@ -15,8 +15,8 @@ export class Auth0Provider extends Component {
     user: null,
   };
   config = {
-    domain: process.env.REACT_APP_AUTH0_DOMAIN,
-    client_id: process.env.REACT_APP_AUTH0_CLIENT_ID,
+    domain: "dev--yit7ecl.auth0.com",
+    client_id: "lIXxsIyBaSzyp0roSOZTou1kzBOYURUx",
     redirect_uri: window.location.origin,
   };
   componentDidMount() {
