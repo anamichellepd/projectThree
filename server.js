@@ -1,3 +1,6 @@
+require("dotenv").config();
+console.log(process.env.REACT_APP_AUTH0_DOMAIN);
+
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
