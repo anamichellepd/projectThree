@@ -1,0 +1,16 @@
+.container-fluid {
+  padding: 40px;
+}
+#selectDateRow {
+  margin-top: 60px;
+}
+.offset-md-2 {
+  margin-top: 60px;
+}
+.input-group {
+  width: 600px;
+  height: 500px;
+}
+.form-control {
+  pointer-events: none;
+}

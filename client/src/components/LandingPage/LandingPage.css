@@ -1,0 +1,12 @@
+.jumbotron {
+  background-image: url(https://www.itl.cat/pics/b/23/233229_wallpaper-wide.jpg);
+  /* background-size: auto 100%; */
+  background-size: 100% 100%;
+  /* background-size: cover; */
+}
+.carousel-inner img {
+  width: 550px;
+  max-height: 300px;
+  -webkit-filter: brightness(90%);
+  filter: brightness(85%);
+}

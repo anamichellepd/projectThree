@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { useAuth0 } from "../contexts/auth0-context";
+import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
-import Home from "./Home";
+import Home from "../Home/Home";
 // import "./LandingPage.css";
 
 export default function LandingPage() {

@@ -1,0 +1,16 @@
+.container-fluid {
+  padding: 40px;
+}
+#describeDayRow {
+  margin-top: 40px;
+}
+.input-group {
+  width: 650px;
+  height: 450px;
+}
+.card {
+  width: 18rem;
+}
+.btn {
+  margin-top: 20px;
+}

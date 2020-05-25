@@ -1,6 +1,7 @@
 import React from "react";
-import { useAuth0 } from "../contexts/auth0-context";
+import { useAuth0 } from "../../contexts/auth0-context";
 import "./Header.css";
+import Routes from "../../Routes/Routes";
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
@@ -12,7 +13,7 @@ export default function Header() {
           <div className="navbar-menu is-active">
             {/*logo*/}
             <div className="navbar-brand">
-              <button className="navbar-item">Psykhe App!!</button>
+              <button className="navbar-item">PSYKHE</button>
             </div>
             {/*menu items*/}
             <div className="navbar-end">
@@ -25,6 +26,30 @@ export default function Header() {
               {/* if there is a user.  show user name and logout button */}
               {!isLoading && user && (
                 <>
+                  <button
+                    onClick={() => Routes.get("/New")}
+                    className="navbar-item"
+                  >
+                    <a className="nav-link" href="www.google.com">
+                      New Log
+                    </a>
+                  </button>
+                  <button className="navbar-item">
+                    <a className="nav-link" href="#">
+                      Past Logs
+                    </a>
+                  </button>
+                  <button className="navbar-item">
+                    <a className="nav-link" href="#">
+                      Analysis
+                    </a>
+                  </button>
+                  <button className="navbar-item">
+                    <a className="nav-link" href="#">
+                      Log Out
+                    </a>
+                  </button>
+
                   <button className="navbar-item">{user.name}</button>
                   <button
                     onClick={() => logout({ returnTo: window.location.origin })}
