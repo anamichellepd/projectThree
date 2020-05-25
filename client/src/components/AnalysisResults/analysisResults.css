@@ -1,0 +1,19 @@
+.container-fluid {
+  padding: 30px;
+}
+#valuesRow {
+  margin-top: 60px;
+  padding: 70px;
+}
+#valuesCol {
+  margin-top: 80px;
+}
+#personalityCol {
+  margin-top: 80px;
+}
+#likelyOrUnlikelyCol {
+  margin-top: 80px;
+}
+#rowWithButton {
+  margin-top: 250px;
+}
