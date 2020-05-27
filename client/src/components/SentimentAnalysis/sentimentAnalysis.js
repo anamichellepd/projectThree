@@ -1,6 +1,7 @@
 import React from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import "bulma/css/bulma.css";
+import "./sentimentAnalysis.css";
 
 export default function sentimentAnalysis() {
   // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
