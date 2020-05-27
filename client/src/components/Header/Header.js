@@ -30,20 +30,20 @@ export default function Header() {
               {/* if there is a user.  show user name and logout button */}
               {!isLoading && user && (
                 <>
-                  <Link to="/New" className="navbar-item">
+                  <Link to="/New" className="navbar-item has-text-info">
                     New Log
                   </Link>
-                  <Link to="/Past" className="navbar-item">
+                  <Link to="/Past" className="navbar-item has-text-info">
                     Past Logs
                   </Link>
-                  <Link to="/Analysis" className="navbar-item">
+                  <Link to="/Analysis" className="navbar-item has-text-info">
                     Analysis
                   </Link>
 
                   <button className="navbar-item">{user.name}</button>
                   <button
                     onClick={() => logout({ returnTo: window.location.origin })}
-                    className="navbar-item"
+                    className="navbar-item has-text-info"
                   >
                     Logout
                   </button>
