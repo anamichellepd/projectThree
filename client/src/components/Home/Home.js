@@ -2,6 +2,8 @@ import React, { useContext, Component } from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import "./Home.css";
+import Header from "../Header/Header";
+
 import history from "../../history";
 import { Link } from "react-router-dom";
 
@@ -10,6 +12,7 @@ export default function Home() {
 
   return (
     <>
+<Header />
       <h1>You are logged in!</h1>
       <p>Hello, {user.name}.</p>
 

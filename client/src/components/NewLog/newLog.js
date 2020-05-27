@@ -1,10 +1,10 @@
 import { withRouter } from "react-router-dom";
 import React, { Component } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
-import "bulma/css/bulma.css";
 import "./newLog.css";
 import history from "../../history";
 import Routes from "../../Routes/Routes";
+import Header from "../Header/Header";
 
 //export default withRouter function newLog() {
 const newLog = function () {
@@ -12,7 +12,8 @@ const newLog = function () {
   // console.log("LOADED");
 
   return (
-    // <>
+    <>
+    <Header />
     <div className="container-fluid">
       <div className="row">
         <div className="col offset-md-3">
@@ -59,7 +60,7 @@ const newLog = function () {
         </div>
       </div>
     </div>
-    // </>
+   </>
   );
 };
 
