@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import Routes from "../../Routes/Routes";
 import history from "../../history";
@@ -27,26 +28,20 @@ export default function Header() {
               {/* if there is a user.  show user name and logout button */}
               {!isLoading && user && (
                 <>
+                  <Link to={{ pathname: "/New" }} className="navbar-item">
+                    New Log
+                  </Link>
                   <button
-                    onClick={() => history.push("/New")}
+                    onClick={() => history.push("/Past")}
                     className="navbar-item"
                   >
-                    New Log
+                    Past Logs
                   </button>
-                  <button className="navbar-item">
-                    <a className="nav-link" href="#">
-                      Past Logs
-                    </a>
-                  </button>
-                  <button className="navbar-item">
-                    <a className="nav-link" href="#">
-                      Analysis
-                    </a>
-                  </button>
-                  <button className="navbar-item">
-                    <a className="nav-link" href="#">
-                      Log Out
-                    </a>
+                  <button
+                    onClick={() => history.push("/Analysis")}
+                    className="navbar-item"
+                  >
+                    Analysis
                   </button>
 
                   <button className="navbar-item">{user.name}</button>

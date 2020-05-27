@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, Component } from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import "./Home.css";
 import history from "../../history";
+import { Link } from "react-router-dom";
 // import "./LandingPage.css";
 
 export default function Home() {
@@ -20,23 +21,36 @@ export default function Home() {
       <div className="homeContainer">
         <div className="row">
           <div className="col">
-            <button
+            <Link
               type="button"
               className="btn btn-lg btn-outline-warning"
-              onClick={() => {
-                history.push("/New");
+              to={{
+                pathname: "/New",
               }}
             >
               Write New Log
-            </button>
+            </Link>
+            />
           </div>
           <div className="col">
-            <button type="button" className="btn btn-lg btn-outline-success">
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-success"
+              onClick={() => {
+                history.push("/Past");
+              }}
+            >
               Review Past Logs
             </button>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-lg btn-outline-info">
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-info"
+              onClick={() => {
+                history.push("/Analysis");
+              }}
+            >
               Review Sentiment Analysis
             </button>
           </div>
