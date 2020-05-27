@@ -1,5 +1,6 @@
 const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
+const Log = require("../models/log");
 
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
@@ -18,6 +19,16 @@ module.exports = (apps) => {
     // the ID is the sub: part
     console.log(req.user);
 
-    res.send("This worked!");
+    //
+    const log = new Log({
+      date: Date.now(),
+      body: req.body,
+      userID: req.user.sub,
+    });
+
+    //
+    log.save().then(() => {
+      res.send("This worked!");
+    });
   });
 };
