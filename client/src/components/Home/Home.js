@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import "./Home.css";
+import history from "../../history";
 // import "./LandingPage.css";
 
 export default function Home() {
@@ -19,7 +20,13 @@ export default function Home() {
       <div className="homeContainer">
         <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-lg btn-outline-warning">
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-warning"
+              onClick={() => {
+                history.push("/New");
+              }}
+            >
               Write New Log
             </button>
           </div>

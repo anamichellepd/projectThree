@@ -7,14 +7,13 @@ import { Auth0Provider } from "./contexts/auth0-context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <Auth0Provider>
-    <Router>
-      <React.StrictMode>
+  <React.StrictMode>
+    <Auth0Provider>
+      <Router>
         <App />
-        <Routes />
-      </React.StrictMode>
-    </Router>
-  </Auth0Provider>,
+      </Router>
+    </Auth0Provider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

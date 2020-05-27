@@ -7,14 +7,14 @@ export default function pastLogs() {
 
   return (
     <>
-      <div className="container-fluid" style="padding: 40px">
+      <div className="container-fluid">
         <div className="row">
           <div className="col offset-md-2">
             <h2>Past Logs</h2>
           </div>
         </div>
-        <div clasName="row" style="margin-top: 60px">
-          <div className="col offset-md-2" style="margin-top: 60px">
+        <div clasName="row" id="selectDateRow">
+          <div className="col offset-md-2">
             <h4>Select Date</h4>
 
             {/* insert date/calendar npm package thing here */}
@@ -22,11 +22,8 @@ export default function pastLogs() {
           <div className="col">
             <h4>(Date)</h4>
             {/* disabled text area of past log */}
-            <div className="input-group" style="width: 600px; height: 500px">
-              <textarea
-                className="form-control"
-                style="pointer-events: none"
-              ></textarea>
+            <div className="input-group">
+              <textarea className="form-control"></textarea>
             </div>
           </div>
           <div className="col-3"></div>

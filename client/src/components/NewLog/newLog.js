@@ -1,9 +1,11 @@
 import React from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import "bulma/css/bulma.css";
+import history from "../../history";
 
 export default function newLog() {
   // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
+  console.log("LOADED");
 
   return (
     <>

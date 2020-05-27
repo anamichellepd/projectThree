@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "./Header.css";
 import Routes from "../../Routes/Routes";
+import history from "../../history";
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
@@ -27,12 +28,10 @@ export default function Header() {
               {!isLoading && user && (
                 <>
                   <button
-                    onClick={() => Routes.get("/New")}
+                    onClick={() => history.push("/New")}
                     className="navbar-item"
                   >
-                    <a className="nav-link" href="www.google.com">
-                      New Log
-                    </a>
+                    New Log
                   </button>
                   <button className="navbar-item">
                     <a className="nav-link" href="#">
