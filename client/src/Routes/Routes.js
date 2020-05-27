@@ -8,17 +8,15 @@ import sentimentAnalysis from "../components/SentimentAnalysis/sentimentAnalysis
 import history from "../history";
 import LandingPage from "../components/LandingPage/LandingPage";
 
-export default class Routes extends Component {
-  render() {
-    return (
-      <Router history={history}>
-        <Switch>
-          <Route path="/" exact component={LandingPage} />
-          <Route path="/New" component={newLog} />
-          <Route path="/Past" component={pastLogs} />
-          <Route path="/Analysis" component={sentimentAnalysis} />
-        </Switch>
-      </Router>
-    );
-  }
+export default function Routes() {
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/New" component={newLog} />
+        <Route path="/Past" component={pastLogs} />
+        <Route path="/Analysis" component={sentimentAnalysis} />
+      </Switch>
+    </Router>
+  );
 }
