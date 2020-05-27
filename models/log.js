@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const logSchema = new Schema({
-  date: { type: [String], required: true },
-  body: { type: [String], required: true },
+const logSchema = new mongoose.Schema({
+  date: { type: [Date], required: true },
+  body: { type: [String], default: Date.now },
   userID: { type: [String], required: true },
 });
 

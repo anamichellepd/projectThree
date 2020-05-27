@@ -13,17 +13,15 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //to get mongoose
-mongoose.connect("mongodb://localhost/test", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/psykhe", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
-  // we're connected!
-});
-
-//Setting up schema
-var psykheSchema = new mongoose.Schema();
-({
-  name: String,
+  console.log("MongoDB connected successfully");
 });
 
 // Send every request to the React app
