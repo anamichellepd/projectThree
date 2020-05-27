@@ -2,10 +2,12 @@ import { withRouter } from "react-router-dom";
 import React, { Component } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import "bulma/css/bulma.css";
+import "./newLog.css";
 import history from "../../history";
 import Routes from "../../Routes/Routes";
 
-export default function newLogs() {
+//export default withRouter function newLog() {
+const newLog = function () {
   // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
   // console.log("LOADED");
 
@@ -59,4 +61,6 @@ export default function newLogs() {
     </div>
     // </>
   );
-}
+};
+
+export default withRouter(newLog);

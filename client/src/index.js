@@ -9,9 +9,7 @@ import * as serviceWorker from "./serviceWorker";
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider>
-      <Router>
-        <App />
-      </Router>
+      <App />
     </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")

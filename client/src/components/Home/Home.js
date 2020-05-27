@@ -4,7 +4,6 @@ import "bulma/css/bulma.css";
 import "./Home.css";
 import history from "../../history";
 import { Link } from "react-router-dom";
-// import "./LandingPage.css";
 
 export default function Home() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <>
       <h1>You are logged in!</h1>
-      <p>Hello {user.name}</p>
+      <p>Hello, {user.name}.</p>
 
       {user.picture && <img src={user.picture} alt="My Avatar" />}
       <hr />
@@ -30,18 +29,15 @@ export default function Home() {
             >
               Write New Log
             </Link>
-            />
           </div>
           <div className="col">
-            <button
+            <Link
               type="button"
               className="btn btn-lg btn-outline-success"
-              onClick={() => {
-                history.push("/Past");
-              }}
+              to={{ pathname: "/Past" }}
             >
               Review Past Logs
-            </button>
+            </Link>
           </div>
           <div className="col">
             <button
@@ -59,7 +55,7 @@ export default function Home() {
 
       <button
         onClick={() => logout({ returnTo: window.location.origin })}
-        className="button is-small is-dark"
+        className="button logout-btn is-dark"
       >
         Logout
       </button>

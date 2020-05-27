@@ -1,31 +1,28 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 
-import Home from "../client/src/components/LandingPage";
-import New Log from "./Contact/Contact";
-import Past Logs from "./Product/Products";
-import Analysis from "./Home/Home";
+import Home from "../components/Home/Home";
+import newLog from "../components/NewLog/newLog";
+import pastLogs from "../components/PastLogs/pastLogs";
+import sentimentAnalysis from "../components/SentimentAnalysis/sentimentAnalysis";
+import history from "../history";
+import LandingPage from "../components/LandingPage/LandingPage";
 
-
-export default class Routes extends Component {
-    render() {
-        return (
-            <Router history={history}>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/About" component={About} />
-                    <Route path="/Contact" component={Contact} />
-                    <Route path="/Products" component={Products} />
-                </Switch>
-            </Router>
-        )
-    }
+export default function Routes() {
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/New" component={newLog} />
+        <Route path="/Past" component={pastLogs} />
+        <Route path="/Analysis" component={sentimentAnalysis} />
+      </Switch>
+    </Router>
+  );
 }
-
 
 // const router = require ("express").Router();
 // const Log = require ("../models/log.js");
-
 
 // //POSTING NEW LOG
 // router.post ("/api/log", (req,res)=>{
