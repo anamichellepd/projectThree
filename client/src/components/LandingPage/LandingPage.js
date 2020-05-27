@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import Home from "../Home/Home";
+import history from "../../history";
 // import "./LandingPage.css";
 
 export default function LandingPage() {
