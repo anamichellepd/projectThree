@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import { Link } from "react-router-dom";
 import "./Header.css";
-
+import "bulma/css/bulma.css";
 import history from "../../history";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="navbar is-dark">
+      <nav className="navbar is-transparent">
         <div className="container">
           <div className="navbar-menu is-active">
             {/*logo*/}
@@ -30,6 +30,9 @@ export default function Header() {
               {/* if there is a user.  show user name and logout button */}
               {!isLoading && user && (
                 <>
+                <Link to="/" className="navbar-item has-text-info">
+                    Home
+                  </Link>
                   <Link to="/New" className="navbar-item has-text-info">
                     New Log
                   </Link>

@@ -2,12 +2,14 @@ import React from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import "./analysisResults.css";
+import Header from "../Header/Header";
 
 export default function analysisResults() {
   // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   return (
     <>
+    <Header />
       <div className="container-fluid">
         <div className="row">
           <div className="col">
