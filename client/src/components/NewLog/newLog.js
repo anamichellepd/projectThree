@@ -1,11 +1,11 @@
 import { withRouter } from "react-router-dom";
 import React, { Component, useState } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
-// import "bulma/css/bulma.css";
-// import "./newLog.css";
+import API from "../../utils/API";
+import "./newLog.css";
 import history from "../../history";
 import Routes from "../../Routes/Routes";
-import API from "../../utils/API";
+import Header from "../Header/Header";
 
 //export default withRouter function newLog() {
 const NewLog = function () {
