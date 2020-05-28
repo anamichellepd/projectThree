@@ -4,13 +4,13 @@
   background-size: 100% 100%;
   /* background-size: cover; */
 }
-form {
+/* form {
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 500px;
   height: 300px;
   padding: 50px;
-}
+} */
 .button {
   background-color: blue;
 }

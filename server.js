@@ -24,6 +24,11 @@ db.once("open", function () {
   console.log("MongoDB connected successfully");
 });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+require("./routes/logs")(app);
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {

@@ -15,6 +15,8 @@ export default {
   },
   // Saves a log to the database
   saveLog: function (logData) {
-    return axios.post("/api/logs", logData);
+    console.log("logData", logData);
+
+    return axios.post("/api/log", { bodyText: logData });
   },
 };
