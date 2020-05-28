@@ -2,15 +2,14 @@ import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import "bulma/css/bulma.css";
-import history from "../../history";
+// import "bulma/css/bulma.css";
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   return (
     <header>
-      <nav className="navbar is-transparent">
+      <nav className="navbar navbar-expand-lg">
         <div className="container">
           <div className="navbar-menu is-active">
             {/*logo*/}
@@ -30,23 +29,23 @@ export default function Header() {
               {/* if there is a user.  show user name and logout button */}
               {!isLoading && user && (
                 <>
-                <Link to="/" className="navbar-item has-text-info">
+                  <Link to="/" className="nav-link">
                     Home
                   </Link>
-                  <Link to="/New" className="navbar-item has-text-info">
+                  <Link to="/New" className="nav-link">
                     New Log
                   </Link>
-                  <Link to="/Past" className="navbar-item has-text-info">
+                  <Link to="/Past" className="nav-link">
                     Past Logs
                   </Link>
-                  <Link to="/Analysis" className="navbar-item has-text-info">
+                  <Link to="/Analysis" className="nav-link">
                     Analysis
                   </Link>
 
                   <button className="navbar-item">{user.name}</button>
                   <button
                     onClick={() => logout({ returnTo: window.location.origin })}
-                    className="navbar-item has-text-info"
+                    className="navbar-item"
                   >
                     Logout
                   </button>

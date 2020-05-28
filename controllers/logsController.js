@@ -13,6 +13,11 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  findByDate: function (req, res) {
+    db.Log.findByDate(req.params.date)
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   create: function (req, res) {
     db.Log.create(req.body)
       .then((dbModel) => res.json(dbModel))

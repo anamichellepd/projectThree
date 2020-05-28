@@ -1,4 +1,10 @@
 .container-fluid {
+  background-image: url(../../images/130979.jpg);
+  /* background-size: auto 100%; */
+  background-size: 100% 100%;
+  /* background-size: cover; */
+  -webkit-filter: brightness(90%);
+  filter: brightness(90%);
   padding: 40px;
 }
 #selectDateRow {
