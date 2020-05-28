@@ -1,9 +1,7 @@
 import React, { useContext, Component } from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
-import "bulma/css/bulma.css";
 import "./Home.css";
 import Header from "../Header/Header";
-
 import history from "../../history";
 import { Link } from "react-router-dom";
 
@@ -12,20 +10,24 @@ export default function Home() {
 
   return (
     <>
-<Header />
-      <h1>You are logged in!</h1>
-      <p>Hello, {user.name}.</p>
-
-      {user.picture && <img src={user.picture} alt="My Avatar" />}
-      <hr />
-
+      <Header />
       {/* <!--Section with buttons--> */}
-      <div className="homeContainer">
+      <div className="container-fluid">
         <div className="row">
+          <div className="col">
+            <h1>You are logged in!</h1>
+            <p>Hello, {user.name}.</p>
+            <div className="imageDiv">
+              {user.picture && <img src={user.picture} alt="My Avatar" />}
+            </div>
+            <hr />
+          </div>
+        </div>
+        <div className="row rowOfBtns">
           <div className="col">
             <Link
               type="button"
-              className="btn btn-lg btn-outline-warning"
+              className="btn btn-lg btn-outline-danger"
               to={{
                 pathname: "/New",
               }}
@@ -54,14 +56,17 @@ export default function Home() {
             </button>
           </div>
         </div>
+        <div className="row">
+          <div className="col">
+            <button
+              onClick={() => logout({ returnTo: window.location.origin })}
+              className="button logout-btn is-dark"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
       </div>
-
-      <button
-        onClick={() => logout({ returnTo: window.location.origin })}
-        className="button logout-btn is-dark"
-      >
-        Logout
-      </button>
     </>
   );
 }

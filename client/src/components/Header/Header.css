@@ -1,3 +1,9 @@
+.navbar {
+  background-image: url(https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-010-winter-neva.png);
+  /* background-size: auto 100%; */
+  background-size: 100% 100%;
+  /* background-size: cover; */
+}
 button {
   background: transparent;
   outline: none;

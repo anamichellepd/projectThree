@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "bulma/css/bulma.css";
 import "./LandingPage.css";
-import Home from "../Home/Home";
 
 export default function LandingPage() {
-  const { isLoading, user, loginWithRedirect, logout } = useAuth0();
+  const { isLoading, user, loginWithRedirect } = useAuth0();
 
   return (
     <div className="container-fluid">

@@ -9,6 +9,7 @@ export default {
   getLog: function (id) {
     return axios.get("/api/logs/" + id);
   },
+
   // Deletes the log with the given id
   deleteLog: function (id) {
     return axios.delete("/api/logs/" + id);
