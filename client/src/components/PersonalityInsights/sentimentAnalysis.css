@@ -1,0 +1,32 @@
+.containerAnalysis {
+  background-image: url("../../images/130979.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* background-size: auto 100%;
+  background-size: 100% 100%;
+  background-size: cover; */
+  /* -webkit-filter: brightness(90%);
+  filter: brightness(90%);*/
+}
+.h2Analysis {
+  margin: 60px 0px 0px 40px;
+}
+/* #calendarRowAnalysis {
+  text-align: center;
+} */
+ #startRow, #endCol {
+  margin-top: 10px;
+  padding: 190px;
+} 
+#endCol {
+  margin-left: -320px;
+}
+#submitRowAnalysis {
+  text-align: center;
+}
+.submitBtnAnalysis {
+  font-size: 20px;
+  margin-bottom: 90px;
+  padding: 30px;
+  width: 170px;
+}

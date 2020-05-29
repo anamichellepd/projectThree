@@ -12,7 +12,8 @@ import {
 import Home from "../src/components/Home/Home";
 import newLog from "../src/components/NewLog/newLog";
 import pastLogs from "../src/components/PastLogs/pastLogs";
-import sentimentAnalysis from "../src/components/SentimentAnalysis/sentimentAnalysis";
+import sentimentAnalysis from "../src/components/PersonalityInsights/sentimentAnalysis";
+import analysisResults from "../src/components/AnalysisResults/analysisResults";
 
 function App() {
   const { isLoading, user } = useAuth0();
@@ -27,7 +28,8 @@ function App() {
         <Switch>
           <Route path="/New" component={withRouter(newLog)} />
           <Route path="/Past" component={pastLogs} />
-          <Route path="/Analysis" component={sentimentAnalysis} />
+          <Route path="/Insights" component={sentimentAnalysis} />
+          <Route path="/Results" component={analysisResults} />
         </Switch>
       </Router>
     </>

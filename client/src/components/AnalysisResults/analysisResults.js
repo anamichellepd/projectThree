@@ -1,35 +1,32 @@
 import React from "react";
-// import { useAuth0 } from "../contexts/auth0-context";
-import "bulma/css/bulma.css";
 import "./analysisResults.css";
 import Header from "../Header/Header";
 
 export default function analysisResults() {
-  // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   return (
     <>
     <Header />
-      <div className="container-fluid">
+      <div className="container-fluid resultsContainer">
         <div className="row">
           <div className="col">
-            <h2>Sentiment Analysis</h2>
+            <h2 className="insightsTitle">Personality Insights</h2>
           </div>
         </div>
         <div className="row" id="valuesRow">
-          <div className="col" id="valuesCol">
+          <div className="col-md-4" id="valuesCol">
             <h4>(Values)</h4>
           </div>
-          <div className="col" id="personalityCol">
+          <div className="col-md-4" id="personalityCol">
             <h4>(Personality)</h4>
           </div>
-          <div className="col" id="likelyOrUnlikelyCol">
+          <div className="col-md-4" id="likelyOrUnlikelyCol">
             <h4>(You are likely/unlikely)</h4>
           </div>
         </div>
-        <div className="row-md-1" id="rowWithButton">
-          <div className="col">
-            <button type="button" className="btn btn-primary">
+        <div className="row" id="rowWithButton">
+          <div className="col-md-4">
+            <button type="button" className="btn btn-primary shareBtn">
               Share with a Friend
             </button>
           </div>

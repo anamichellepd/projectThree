@@ -1,23 +1,22 @@
 import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
-import "bulma/css/bulma.css";
 import "./LandingPage.css";
 
 export default function LandingPage() {
   const { isLoading, user, loginWithRedirect } = useAuth0();
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid landingContainer">
       <div className="row">
         <div className="col">
           <div className="jumbotron">
-            <h1 className="display-4">PSYKHE</h1>
-            <p className="lead">
+            <h1 className="display-4 titleOnLanding">PSYKHE</h1>
+            <p className="lead landingP1">
               Create a personal journal and get feedback of your emotions and
               tone.
             </p>
             <hr className="my-4" />
-            <p>
+            <p className="landingP2">
               "Do not dwell in the past, do not dream of the future,
               <br />
               concentrate the mind on the present moment."
@@ -26,18 +25,8 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-3">
-          <form>
-            {!isLoading && !user && (
-              <>
-                {/* <h1>Click Below!</h1> */}
-                <button onClick={() => loginWithRedirect({})}>Log in</button>
-              </>
-            )}
-          </form>
-        </div>
-        <div className="col-md-4 offset-md-2">
+      <div className="row d-flex secondLandingRow">
+        <div className="col-md-6">
           <div id="carousel" className="carousel slide" data-ride="carousel">
             <ul className="carousel-indicators">
               <li
@@ -97,6 +86,23 @@ export default function LandingPage() {
               <span className="carousel-control-next-icon"></span>
             </a>
           </div>
+        </div>
+        <div className="col-md-6">
+          <form className="formWithLogin">
+            <div className="buttonDiv">
+              {!isLoading && !user && (
+                <>
+                  <button
+                    onClick={() => loginWithRedirect({})}
+                    type="button"
+                    class="btn btn-lg loginBtn"
+                  >
+                    Log in
+                  </button>
+                </>
+              )}
+            </div>
+          </form>
         </div>
       </div>
     </div>
