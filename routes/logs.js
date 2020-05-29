@@ -29,7 +29,7 @@ module.exports = (app) => {
   });
 
   app.get("/api/logs", checkJwt, (req, res) => {
-    Log.find({ userId: req.user.sub }, function (err, docs) {
+    Log.find({ userID: req.user.sub }, function (err, docs) {
       console.log(docs);
       res.json(docs);
     });

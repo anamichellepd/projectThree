@@ -15,9 +15,10 @@ export default function PastLogs() {
   }
 
   useEffect(() => {
-    const token = getToken();
-    API.getLogs(token).then((response) => {
-      console.log(response);
+    const token = getToken().then((token) => {
+      API.getLogs(token).then((response) => {
+        console.log(response);
+      });
     });
   });
   return (
