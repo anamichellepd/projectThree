@@ -24,13 +24,15 @@ function App() {
         {!isLoading && !user && (
           <Route exact path="/" component={withRouter(LandingPage)} />
         )}
-        {user && <Route exact path="/" component={withRouter(Home)} />}
-        <Switch>
-          <Route path="/New" component={withRouter(newLog)} />
-          <Route path="/Past" component={pastLogs} />
-          <Route path="/Insights" component={sentimentAnalysis} />
-          <Route path="/Results" component={analysisResults} />
-        </Switch>
+        {user && (
+          <Switch>
+            <Route exact path="/" component={withRouter(Home)} />
+            <Route path="/New" component={withRouter(newLog)} />
+            <Route path="/Past" component={pastLogs} />
+            <Route path="/Insights" component={sentimentAnalysis} />
+            <Route path="/Results" component={analysisResults} />
+          </Switch>
+        )}
       </Router>
     </>
   );

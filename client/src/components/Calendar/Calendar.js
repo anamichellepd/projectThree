@@ -11,7 +11,6 @@ const NewDate = function () {
       <Calendar
         onClickDay={(date) => {
           setDate(date);
-          console.log(date);
         }}
       ></Calendar>
     </>

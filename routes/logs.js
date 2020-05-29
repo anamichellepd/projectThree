@@ -9,17 +9,17 @@ const checkJwt = jwt({
     jwksUri: "https://dev--yit7ecl.auth0.com/.well-known/jwks.json",
   }),
   audience: "https://project3",
-  issuer: "https://dev--yit7ecl.auth0.com",
+  issuer: "https://dev--yit7ecl.auth0.com/",
   algorithms: ["RS256"],
 });
 module.exports = (app) => {
-  app.post("/api/log", (req, res) => {
+  app.post("/api/log", checkJwt, (req, res) => {
     console.log(req.body);
 
     const log = new Log({
       date: Date.now(),
       body: req.body.bodyText,
-      userID: "userID",
+      userID: req.user.sub,
     });
 
     //
@@ -28,8 +28,8 @@ module.exports = (app) => {
     });
   });
 
-  app.get("/api/logs", (req, res) => {
-    Log.find({}, function (err, docs) {
+  app.get("/api/logs", checkJwt, (req, res) => {
+    Log.find({ userID: req.user.sub }, function (err, docs) {
       console.log(docs);
       res.json(docs);
     });
