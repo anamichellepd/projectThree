@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./pastLogs.css";
 import Header from "../Header/Header";
 import Calendar from "../Calendar/Calendar";
 import API from "../../utils/API";
+import { Auth0Context } from "../../contexts/auth0-context";
 
 export default function PastLogs() {
   const [logs, setLogs] = useState([]);
+  const { user, getTokenSilently } = useContext(Auth0Context);
+
+  async function getToken() {
+    let token = await getTokenSilently();
+    return token;
+  }
 
   useEffect(() => {
-    API.getLogs().then((response) => {
+    const token = getToken();
+    API.getLogs(token).then((response) => {
       console.log(response);
     });
   });

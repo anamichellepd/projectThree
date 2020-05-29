@@ -1,6 +1,7 @@
 import { withRouter } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
+import { Auth0Context } from "../../contexts/auth0-context";
 
 import API from "../../utils/API";
 
@@ -8,14 +9,9 @@ import "./newLog.css";
 
 import Header from "../Header/Header";
 
-//export default withRouter function newLog() {
 const NewLog = function () {
-  // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
-  // console.log("LOADED");
-
   const [body, setBody] = useState("");
-
-  console.log(body);
+  const { user, getTokenSilently } = useContext(Auth0Context);
 
   return (
     <>
@@ -41,9 +37,11 @@ const NewLog = function () {
               <button
                 type="submit"
                 className="btn btn-primary submitNewLogBtn"
-                onClick={(e) => {
+                onClick={async (e) => {
                   e.preventDefault();
-                  API.saveLog(body).then((response) => {
+                  let token = await getTokenSilently();
+
+                  API.saveLog(body, token).then((response) => {
                     console.log(response);
                   });
                 }}
