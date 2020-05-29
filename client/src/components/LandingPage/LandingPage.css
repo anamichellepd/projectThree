@@ -3,26 +3,53 @@
   /* background-size: auto 100%; */
   background-size: 100% 100%;
   /* background-size: cover; */
+  height: 525px;
 }
-/* form {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  width: 500px;
-  height: 300px;
-  padding: 50px;
-} */
-.button {
-  background-color: blue;
+.titleOnLanding {
+  font-size: 100px;
 }
-.login-btn {
-  width: 180px;
-  margin-top: 10px;
-  margin-left: 20px;
-  padding: 15px;
+.landingP1 {
+  font-size: 30px;
+}
+.landingP2 {
+  font-size: 20px;
+}
+.secondLandingRow {
+  text-align: center;
+  margin-top: 5px;
+}
+.formWithLogin {
+  background-image: url(https://s3.pixers.pics/pixers/700/FO/25/57/46/74/700_FO25574674_74d0194e7739d69bf3005afcc7ebdbe3.jpg);
+  background-size: 100% 100%;
+  width: 1100px;
+  height: 500px;
+  position: relative;
+}
+.buttonDiv {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.loginBtn {
+  font-weight: bold;
+  padding: 40px;
+  width: 250px;
+  text-align: center;
+  color: #3f51b5;
+  /* border-color: #0288d1; */
+  background-color: #c5cae9;
+  border-radius: 20px;
+}
+.loginBtn:hover {
+  color: white;
+  background-color: #3f51b5;
 }
 .carousel-inner img {
-  width: 550px;
-  height: 550px;
+  width: 1100px;
+height: 500px;
   -webkit-filter: brightness(90%);
   filter: brightness(85%);
 }

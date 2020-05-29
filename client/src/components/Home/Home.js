@@ -12,22 +12,18 @@ export default function Home() {
     <>
       <Header />
       {/* <!--Section with buttons--> */}
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container-fluid homeContainer">
+        <div className="row" id="loggedInRowHome">
           <div className="col">
-            <h1>You are logged in!</h1>
-            <p>Hello, {user.name}.</p>
-            <div className="imageDiv">
-              {user.picture && <img src={user.picture} alt="My Avatar" />}
-            </div>
-            <hr />
+          {user.picture && <img className="homeImg" src={user.picture} alt="My Avatar" />}
+            <h4 className="homeH4">You are logged in! <span className="homeSpan">Hello, {user.name}.</span></h4>
           </div>
         </div>
-        <div className="row rowOfBtns">
-          <div className="col">
+        <div className="row" id="rowOfBtns">
+          <div className="col-md-4">
             <Link
               type="button"
-              className="btn btn-lg btn-outline-danger"
+              className="btn btn-lg newHomeBtn"
               to={{
                 pathname: "/New",
               }}
@@ -35,34 +31,24 @@ export default function Home() {
               Write New Log
             </Link>
           </div>
-          <div className="col">
+          <div className="col-md-4 pastHomeCol">
             <Link
               type="button"
-              className="btn btn-lg btn-outline-success"
+              className="btn btn-lg pastHomeBtn"
               to={{ pathname: "/Past" }}
             >
               Review Past Logs
             </Link>
           </div>
-          <div className="col">
+          <div className="col-md-4">
             <button
               type="button"
-              className="btn btn-lg btn-outline-info"
+              className="btn btn-lg analysisHomeBtn"
               onClick={() => {
                 history.push("/Analysis");
               }}
             >
-              Review Sentiment Analysis
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <button
-              onClick={() => logout({ returnTo: window.location.origin })}
-              className="button logout-btn is-dark"
-            >
-              Logout
+              Review Personality Insights
             </button>
           </div>
         </div>

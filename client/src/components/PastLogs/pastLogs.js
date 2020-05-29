@@ -1,33 +1,30 @@
-// import { withRouter } from "react-router-dom";
 import React from "react";
-// import { useAuth0 } from "../contexts/auth0-context";
 import "./pastLogs.css";
 import Header from "../Header/Header";
 import Calendar from "../Calendar/Calendar";
 
 export default function pastLogs() {
-  // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   return (
     <>
       <Header />
-      <div className="container-fluid">
+      <div className="container-fluid pastLogsContainer">
         <div className="row">
-          <div className="col offset-md-2">
-            <h2>Past Logs</h2>
+          <div className="col offset-md-3">
+            <h2 className="pastLogsH2">Past Logs</h2>
           </div>
         </div>
         <div className="row" id="selectDateRow">
-          <div className="col offset-md-2">
-            <h4>Select Date</h4>
+          <div className="col offset-md-3">
+            <h4 className="selectDateH4">Select Date</h4>
             <Calendar />
-            {/* insert date/calendar npm package thing here */}
           </div>
-          <div className="col">
-            <h4>(Date)</h4>
+          <div className="col ">
+            {/* date chosen should show here */}
+            <h4 className="dateH4">(Date)</h4>
             {/* disabled text area of past log */}
-            <div className="input-group">
-              <textarea className="form-control"></textarea>
+            <div className="input-group" id="inputGroupPastLog">
+              <textarea className="form-control" id="textAreaPastLog"></textarea>
             </div>
           </div>
           <div className="col-3"></div>

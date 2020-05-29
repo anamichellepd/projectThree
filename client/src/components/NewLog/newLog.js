@@ -20,28 +20,27 @@ const NewLog = function () {
   return (
     <>
       <Header />
-      <div className="container-fluid">
+      <div className="container-fluid newLogContainer">
         <div className="row">
-          <div className="col offset-md-3">
-            <h2>Write New Log</h2>
+          <div className="col offset-md-2">
+            <h2 className="newLogH2">Write New Log</h2>
           </div>
         </div>
         <div className="row" id="describeDayRow">
-          <div className="col offset-md-1">
-            <h4>Describe Your Day</h4>
+          <div className="col offset-md-2">
+            <h4 className="newLogH4">Describe Your Day</h4>
             <form action="">
               <div className="form-group">
-                <label htmlFor="body">Example textarea</label>
                 <textarea
-                  className="form-control"
+                  className="form-control textAreaNewLog"
                   id="body"
-                  rows="15"
+                  rows="25"
                   onChange={(e) => setBody(e.target.value)}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary submitNewLogBtn"
                 onClick={(e) => {
                   e.preventDefault();
                   API.saveLog(body).then((response) => {
@@ -53,10 +52,10 @@ const NewLog = function () {
               </button>
             </form>
           </div>
-          <div className="col offset-md-3">
-            <div className="card">
+          <div className="col offset-md-1">
+            <div className="card newLogCard">
               <img
-                src="https://lh3.googleusercontent.com/proxy/b03IrgAtarW7QIt151_KPLrvzvRXrA9K1ixJYeVmk8oqo_HwRjaVxo8_GXTqNmTa0M8gmZ0hUKgRwvh4UlFf2BK6QQXbSCy88JGO9bVbLjIBfhOzsHlTAAAdcx4"
+                src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/10/15/0/fnd_Ice-Cubes-thinkstock.jpg.rend.hgtvcom.616.462.suffix/1413404558868.jpeg"
                 className="card-img-top"
                 alt="..."
               ></img>

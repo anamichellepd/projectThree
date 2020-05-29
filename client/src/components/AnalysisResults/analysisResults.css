@@ -1,19 +1,21 @@
-.container-fluid {
-  padding: 30px;
+.resultsContainer {
+  background-image: url("../../images/130979.jpg");
+  /* background-size: cover; */
+  /* /* background-size: auto 100%; */
+  background-size: 100% 100%;
+  /* -webkit-filter: brightness(90%);*/
+  /* filter: brightness(105%);  */
+}
+.insightsTitle {
+  margin: 20px 0px 0px 20px;
 }
 #valuesRow {
-  margin-top: 60px;
-  padding: 70px;
-}
-#valuesCol {
-  margin-top: 80px;
-}
-#personalityCol {
-  margin-top: 80px;
-}
-#likelyOrUnlikelyCol {
-  margin-top: 80px;
+  margin-top: 140px;
+text-align: center;
 }
 #rowWithButton {
-  margin-top: 250px;
+  margin-top: 640px;
+}
+.shareBtn {
+  margin-bottom: 100px;
 }
