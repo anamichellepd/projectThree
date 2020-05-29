@@ -27,4 +27,11 @@ module.exports = (app) => {
       res.send("This worked!");
     });
   });
+
+  app.get("/api/logs", (req, res) => {
+    Log.find({}, function (err, docs) {
+      console.log(docs);
+      res.json(docs);
+    });
+  });
 };

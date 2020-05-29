@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./pastLogs.css";
 import Header from "../Header/Header";
 import Calendar from "../Calendar/Calendar";
+import API from "../../utils/API";
 
-export default function pastLogs() {
+export default function PastLogs() {
+  const [logs, setLogs] = useState([]);
 
+  useEffect(() => {
+    API.getLogs().then((response) => {
+      console.log(response);
+    });
+  });
   return (
     <>
       <Header />
@@ -24,7 +31,10 @@ export default function pastLogs() {
             <h4 className="dateH4">(Date)</h4>
             {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
-              <textarea className="form-control" id="textAreaPastLog"></textarea>
+              <textarea
+                className="form-control"
+                id="textAreaPastLog"
+              ></textarea>
             </div>
           </div>
           <div className="col-3"></div>
