@@ -23,14 +23,25 @@ export default {
     return axios.delete("/api/logs/" + id);
   },
   // Saves a log to the database
-  saveLog: function (logData, token) {
-    console.log("logData", logData);
+  getpastlogs: function (id, token) {
+    console.log("id", id);
+    return axios({
+      method: "get",
+      url: "/past/" + id,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  },
+  // Saves a log to the database
+  saveLog: function (id, token) {
+    console.log("id", id);
 
     return axios({
       method: "post",
       url: "/api/log",
       data: {
-        bodyText: logData,
+        bodyText: id,
       },
       headers: {
         Authorization: `Bearer ${token}`,
