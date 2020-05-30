@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
-  const { isLoading, user, loginWithRedirect, logout } = useAuth0();
+  const { isLoading, user, logout } = useAuth0();
 
   return (
     <>
@@ -34,11 +34,6 @@ export default function Header() {
                   <li className="nav-item">
                     <Link to="/Past" className="nav-link">
                       Past Logs
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/Insights" className="nav-link">
-                      Insights
                     </Link>
                   </li>
                   <li className="nav-item">
