@@ -15,13 +15,13 @@ export default function analysisResults() {
         </div>
         <div className="row" id="valuesRow">
           <div className="col-md-4" id="valuesCol">
-            <h4>(Values)</h4>
+            <h4 className="h4Results">(Values)</h4>
           </div>
           <div className="col-md-4" id="personalityCol">
-            <h4>(Personality)</h4>
+            <h4 className="h4Results">(Personality)</h4>
           </div>
           <div className="col-md-4" id="likelyOrUnlikelyCol">
-            <h4>(You are likely/unlikely)</h4>
+            <h4 className="h4Results">(You are likely/unlikely)</h4>
           </div>
         </div>
         <div className="row" id="rowWithButton">

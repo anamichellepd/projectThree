@@ -30,7 +30,7 @@ const NewLog = function () {
                 <textarea
                   className="form-control textAreaNewLog"
                   id="body"
-                  rows="25"
+                  rows="13"
                   onChange={(e) => setBody(e.target.value)}
                 ></textarea>
               </div>

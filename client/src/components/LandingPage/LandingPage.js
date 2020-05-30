@@ -10,7 +10,7 @@ export default function LandingPage() {
       <div className="row">
         <div className="col">
           <div className="jumbotron">
-            <h1 className="display-4 titleOnLanding">PSYKHE</h1>
+            <h1 className="display-4 titleOnLanding">Psykhe</h1>
             <p className="lead landingP1">
               Create a personal journal and get feedback of your emotions and
               tone.

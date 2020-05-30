@@ -15,11 +15,11 @@ export default function sentimentAnalysis() {
         </div>
         <div className="row" id="calendarRowAnalysis">
           <div className="col offset-md-2" id="startRow">
-            <h4>Start Date</h4>
+            <h4 className="h4Analysis">Start Date</h4>
             <Calendar />
           </div>
           <div className="col" id="endCol">
-            <h4>End Date</h4>
+            <h4 className="h4Analysis">End Date</h4>
             <Calendar />
           </div>
         </div>
