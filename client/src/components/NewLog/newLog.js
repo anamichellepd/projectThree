@@ -25,7 +25,7 @@ const NewLog = function () {
         <div className="row" id="describeDayRow">
           <div className="col offset-md-2">
             <h4 className="newLogH4">Describe Your Day</h4>
-            <form action="">
+            <form action="" id="paperNewLog">
               <div className="form-group">
                 <textarea
                   className="form-control textAreaNewLog"
