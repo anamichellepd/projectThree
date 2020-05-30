@@ -1,6 +1,7 @@
 import { withRouter } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
+import { Auth0Context } from "../../contexts/auth0-context";
 
 import API from "../../utils/API";
 
@@ -8,14 +9,9 @@ import "./newLog.css";
 
 import Header from "../Header/Header";
 
-//export default withRouter function newLog() {
 const NewLog = function () {
-  // const { isLoading, user, loginWithRedirect, logout } = useAuth0();
-  // console.log("LOADED");
-
   const [body, setBody] = useState("");
-
-  console.log(body);
+  const { user, getTokenSilently } = useContext(Auth0Context);
 
   return (
     <>
@@ -29,23 +25,47 @@ const NewLog = function () {
         <div className="row" id="describeDayRow">
           <div className="col offset-md-2">
             <h4 className="newLogH4">Describe Your Day</h4>
-            <form action="">
+            <form action="" id="paperNewLog">
               <div className="form-group">
                 <textarea
                   className="form-control textAreaNewLog"
                   id="body"
-                  rows="25"
+                  rows="13"
                   onChange={(e) => setBody(e.target.value)}
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="btn btn-primary submitNewLogBtn"
-                onClick={(e) => {
+                onClick={async (e) => {
                   e.preventDefault();
-                  API.saveLog(body).then((response) => {
+                  let token = await getTokenSilently();
+
+                  API.saveLog(body, token).then((response) => {
                     console.log(response);
                   });
+                  require.config({
+                    paths: {
+                        "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
+                        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
+                        "bootbox": "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox"
+                    },
+                    shim : {
+                        "bootstrap" : { "deps" :['jquery'] }
+                    }
+                });
+                
+                require(["jquery", "bootstrap", "bootbox"], function(jq, bs, bootbox) {
+                  var dialog = bootbox.dialog({
+                    message: '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>'
+                });
+                            
+                dialog.init(function(){
+                    setTimeout(function(){
+                        dialog.find('.bootbox-body').html('Success! Your log has been saved.');
+                    }, 3000);
+                });
+                });
                 }}
               >
                 Submit

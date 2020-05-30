@@ -10,7 +10,7 @@ const checkJwt = jwt({
     jwksUri: "https://dev--yit7ecl.auth0.com/.well-known/jwks.json",
   }),
   audience: "https://project3",
-  issuer: "https://dev--yit7ecl.auth0.com",
+  issuer: "https://dev--yit7ecl.auth0.com/",
   algorithms: ["RS256"],
 });
 

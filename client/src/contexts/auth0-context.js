@@ -21,6 +21,7 @@ export class Auth0Provider extends Component {
     domain: "dev--yit7ecl.auth0.com",
     client_id: "lIXxsIyBaSzyp0roSOZTou1kzBOYURUx",
     redirect_uri: window.location.origin,
+    audience: "https://project3",
   };
   componentDidMount() {
     this.initializeAuth0();

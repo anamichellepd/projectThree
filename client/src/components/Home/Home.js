@@ -16,7 +16,7 @@ export default function Home() {
         <div className="row" id="loggedInRowHome">
           <div className="col">
           {user.picture && <img className="homeImg" src={user.picture} alt="My Avatar" />}
-            <h4 className="homeH4">You are logged in! <span className="homeSpan">Hello, {user.name}.</span></h4>
+            <h4 className="homeH4">You are logged in! <span className="homeSpan">Hello, {user.name}</span></h4>
           </div>
         </div>
         <div className="row" id="rowOfBtns">

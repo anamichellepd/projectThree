@@ -6,13 +6,16 @@
   height: 525px;
 }
 .titleOnLanding {
+  font-family: 'Cinzel', serif;
   font-size: 100px;
 }
 .landingP1 {
+  font-family: 'Sarabun', sans-serif;
   font-size: 30px;
 }
 .landingP2 {
-  font-size: 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
 }
 .secondLandingRow {
   text-align: center;
