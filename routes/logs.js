@@ -28,6 +28,16 @@ module.exports = (app) => {
     });
   });
 
+  app.get("/past/:id", checkJwt, (req, res) => {
+    Log.find({ userID: req.params.id }, function (err, docs) {
+      if (err) {
+        throw err;
+      }
+      console.log(docs);
+      res.json(docs);
+    });
+  });
+
   app.get("/api/logs", checkJwt, (req, res) => {
     Log.find({ userID: req.user.sub }, function (err, docs) {
       console.log(docs);

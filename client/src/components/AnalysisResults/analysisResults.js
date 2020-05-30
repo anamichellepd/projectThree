@@ -3,11 +3,10 @@ import "./analysisResults.css";
 import Header from "../Header/Header";
 
 export default function analysisResults() {
-
   return (
     <>
-    <Header />
-      <div className="container-fluid resultsContainer">
+      <Header />
+      <div className="container-fluid  resultsContainer">
         <div className="row">
           <div className="col">
             <h2 className="insightsTitle">Personality Insights</h2>
