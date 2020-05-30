@@ -20,7 +20,7 @@ export default function Header() {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
               >
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav mr-auto nav-pills">
                   <li className="nav-item">
                     <Link to="/" className="nav-link">
                       Home
