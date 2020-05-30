@@ -17,11 +17,14 @@ export default function PastLogs() {
   useEffect(() => {
     console.log(user);
     const token = getToken().then((token) => {
-      API.getLogs(token).then((response) => {
-        console.log(response);
-      });
+      // API.getLogs(token).then((response) => {
+      //   console.log(response);
+      // });
+
       API.getpastlogs(user.sub, token).then((res) => {
-        console.log(res);
+        for (let i = 0; i < res.data.length; i++) {
+          console.log(res.data[i].body);
+        }
       }, []);
     });
   });
@@ -43,17 +46,22 @@ export default function PastLogs() {
           <div className="col ">
             {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
-              <textarea
-                className="form-control"
-                id="textAreaPastLog"
-              ></textarea>
-              <Link
-                type="button"
-                className="btn btn-lg btn-warning resultsPastLogsBtn"
-                to={{ pathname: "/Results" }}
-              >
-                Insights
-              </Link>
+              <form action="">
+                <div className="form-group">
+                  <textarea
+                    className="form-control textAreaPastLog"
+                    id="body"
+                    rows="13"
+                  ></textarea>
+                </div>
+                <Link
+                  type="button"
+                  className="btn btn-lg btn-warning resultsPastLogsBtn"
+                  to={{ pathname: "/Results" }}
+                >
+                  Insights
+                </Link>
+              </form>
             </div>
           </div>
           <div className="col-3"></div>
