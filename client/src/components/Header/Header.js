@@ -11,7 +11,7 @@ export default function Header() {
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between headerNav">
           <Link to="/" id="logoHeader" className="navbar-item">
-            PSYKHE
+            Psykhe
           </Link>
 
           {!isLoading && user && (

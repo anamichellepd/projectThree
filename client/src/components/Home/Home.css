@@ -1,10 +1,11 @@
 .homeH4 {
+  font-family: 'Lexend Deca', sans-serif;
   font-size: 20px;
   margin: 20px 10px;
   float: right;
 }
 .homeSpan {
-  font-weight: lighter;
+  font-weight: 500;
 }
 .homeContainer {
   background-image: url("../../images/130979.jpg");
@@ -36,15 +37,15 @@
   background-color: #4e342e;
 }
 .pastHomeBtn{
-  color: #1b5e20;
-  border-color: #1b5e20;
+  color: #15581a;
+  border-color: #15581a;
   font-weight: bold;
   padding: 40px;
   margin-bottom: 300px;
 }
 .pastHomeBtn:hover {
   color: white;
-  background-color: #1b5e20;
+  background-color: #15581a;
 }
 .analysisHomeBtn {
   color: #424242;

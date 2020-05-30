@@ -9,7 +9,12 @@
   filter: brightness(90%);*/
 }
 .h2Analysis {
+  font-family: 'Niramit', sans-serif;
+  text-decoration: underline;
   margin: 60px 0px 0px 40px;
+}
+.h4Analysis {
+  font-family: 'Lexend Deca', sans-serif;
 }
 /* #calendarRowAnalysis {
   text-align: center;

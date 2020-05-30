@@ -25,12 +25,12 @@ const NewLog = function () {
         <div className="row" id="describeDayRow">
           <div className="col offset-md-2">
             <h4 className="newLogH4">Describe Your Day</h4>
-            <form action="">
+            <form action="" id="paperNewLog">
               <div className="form-group">
                 <textarea
                   className="form-control textAreaNewLog"
                   id="body"
-                  rows="25"
+                  rows="13"
                   onChange={(e) => setBody(e.target.value)}
                 ></textarea>
               </div>
@@ -44,6 +44,28 @@ const NewLog = function () {
                   API.saveLog(body, token).then((response) => {
                     console.log(response);
                   });
+                  require.config({
+                    paths: {
+                        "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
+                        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
+                        "bootbox": "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox"
+                    },
+                    shim : {
+                        "bootstrap" : { "deps" :['jquery'] }
+                    }
+                });
+                
+                require(["jquery", "bootstrap", "bootbox"], function(jq, bs, bootbox) {
+                  var dialog = bootbox.dialog({
+                    message: '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>'
+                });
+                            
+                dialog.init(function(){
+                    setTimeout(function(){
+                        dialog.find('.bootbox-body').html('Success! Your log has been saved.');
+                    }, 3000);
+                });
+                });
                 }}
               >
                 Submit

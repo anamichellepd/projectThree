@@ -7,7 +7,12 @@
   /* filter: brightness(105%);  */
 }
 .insightsTitle {
+  font-family: 'Niramit', sans-serif;
+  text-decoration: underline;
   margin: 20px 0px 0px 20px;
+}
+.h4Results {
+  font-family: 'Lexend Deca', sans-serif;
 }
 #valuesRow {
   margin-top: 140px;
