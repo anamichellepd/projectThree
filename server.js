@@ -12,8 +12,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+//if deployed, use the deployed databas. otherwise use the local psykhe database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/psykhe";
+
 //to get mongoose
-mongoose.connect("mongodb://localhost/psykhe", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

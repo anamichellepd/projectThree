@@ -1,5 +1,5 @@
 .homeH4 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   margin: 20px 10px;
   float: right;
@@ -26,7 +26,7 @@
   text-align: center;
 }
 .newHomeBtn {
-  color:#4e342e;
+  color: #4e342e;
   border-color: #4e342e;
   font-weight: bold;
   padding: 40px;
@@ -36,25 +36,25 @@
   color: white;
   background-color: #4e342e;
 }
-.pastHomeBtn{
-  color: #15581a;
-  border-color: #15581a;
+.pastHomeBtn {
+  color: #1c5a20;
+  border-color: #1c5a20;
   font-weight: bold;
   padding: 40px;
   margin-bottom: 300px;
 }
 .pastHomeBtn:hover {
   color: white;
-  background-color: #15581a;
+  background-color: #1c5a20;
 }
-.analysisHomeBtn {
-  color: #424242;
-  border-color: #424242;
+.resultsHomeBtn {
+  color: #636363;
+  border-color: #636363;
   font-weight: bold;
   padding: 40px;
   margin-bottom: 300px;
 }
-.analysisHomeBtn:hover {
+.resultsHomeBtn:hover {
   color: white;
-  background-color: #424242;
+  background-color: #636363;
 }

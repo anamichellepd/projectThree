@@ -9,27 +9,34 @@
   filter: brightness(90%);*/
 }
 .pastLogsH2 {
-  font-family: 'Niramit', sans-serif;
+  font-family: "Niramit", sans-serif;
   text-decoration: underline;
   margin-top: 60px;
 }
 #selectDateRow {
   margin-top: 80px;
 }
-.selectDateH4 {
+/* .selectDateH4 {
   font-family: 'Lexend Deca', sans-serif;
   margin-bottom: 20px;
-}
-.dateH4 {
-  font-family: 'Lexend Deca', sans-serif;
+} */
+/* .dateH4 {
+  font-family: "Lexend Deca", sans-serif;
   margin-bottom: 10px;
-}
+} */
 #inputGroupPastLog {
   width: 600px;
   height: 785px;
 }
 #textAreaPastLog {
   pointer-events: none;
-  background:rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   margin-bottom: 200px;
+}
+.resultsPastLogsBtn {
+  font-size: 20px;
+  margin-top: 150px;
+  padding: 15px;
+  width: 105px;
+  margin-bottom: 97px;
 }

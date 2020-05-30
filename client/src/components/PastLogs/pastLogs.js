@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./pastLogs.css";
 import Header from "../Header/Header";
-import Calendar from "../Calendar/Calendar";
 import API from "../../utils/API";
 import { Auth0Context } from "../../contexts/auth0-context";
+import { Link } from "react-router-dom";
 
 export default function PastLogs() {
   const [logs, setLogs] = useState([]);
@@ -17,13 +17,20 @@ export default function PastLogs() {
   useEffect(() => {
     console.log(user);
     const token = getToken().then((token) => {
-      API.getLogs(token).then((response) => {
-        console.log(response);
-      });
+      // API.getLogs(token).then((response) => {
+      //   console.log(response);
+      // });
+
       API.getpastlogs(user.sub, token).then((res) => {
-        console.log(res);
-      });
+        for (let i = 0; i < res.data.length; i++) {
+          console.log(res.data[i].body);
+        }
+      }, []);
     });
+  });
+
+  useEffect(() => {
+    function pushpastlogs() {}
   });
   return (
     <>
@@ -35,19 +42,26 @@ export default function PastLogs() {
           </div>
         </div>
         <div className="row" id="selectDateRow">
-          <div className="col offset-md-3">
-            <h4 className="selectDateH4">Select Date</h4>
-            <Calendar />
-          </div>
+          <div className="col offset-md-3"></div>
           <div className="col ">
-            {/* date chosen should show here */}
-            <h4 className="dateH4">(Date)</h4>
             {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
-              <textarea
-                className="form-control"
-                id="textAreaPastLog"
-              ></textarea>
+              <form action="">
+                <div className="form-group">
+                  <textarea
+                    className="form-control textAreaPastLog"
+                    id="body"
+                    rows="13"
+                  ></textarea>
+                </div>
+                <Link
+                  type="button"
+                  className="btn btn-lg btn-warning resultsPastLogsBtn"
+                  to={{ pathname: "/Results" }}
+                >
+                  Insights
+                </Link>
+              </form>
             </div>
           </div>
           <div className="col-3"></div>

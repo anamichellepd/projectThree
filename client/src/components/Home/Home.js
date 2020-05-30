@@ -1,4 +1,4 @@
-import React, { useContext, Component } from "react";
+import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "./Home.css";
 import Header from "../Header/Header";
@@ -15,8 +15,13 @@ export default function Home() {
       <div className="container-fluid homeContainer">
         <div className="row" id="loggedInRowHome">
           <div className="col">
-          {user.picture && <img className="homeImg" src={user.picture} alt="My Avatar" />}
-            <h4 className="homeH4">You are logged in! <span className="homeSpan">Hello, {user.name}</span></h4>
+            {user.picture && (
+              <img className="homeImg" src={user.picture} alt="My Avatar" />
+            )}
+            <h4 className="homeH4">
+              You are logged in!{" "}
+              <span className="homeSpan">Hello, {user.name}</span>
+            </h4>
           </div>
         </div>
         <div className="row" id="rowOfBtns">
@@ -43,9 +48,9 @@ export default function Home() {
           <div className="col-md-4">
             <button
               type="button"
-              className="btn btn-lg analysisHomeBtn"
+              className="btn btn-lg resultsHomeBtn"
               onClick={() => {
-                history.push("/Analysis");
+                history.push("/Results");
               }}
             >
               Review Personality Insights

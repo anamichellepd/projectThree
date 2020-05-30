@@ -2,6 +2,7 @@ import { withRouter } from "react-router-dom";
 import React, { useState, useContext } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import { Auth0Context } from "../../contexts/auth0-context";
+import { Link } from "react-router-dom";
 
 import API from "../../utils/API";
 
@@ -46,30 +47,46 @@ const NewLog = function () {
                   });
                   require.config({
                     paths: {
-                        "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
-                        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
-                        "bootbox": "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox"
+                      jquery:
+                        "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
+                      bootstrap:
+                        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
+                      bootbox: "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox",
                     },
-                    shim : {
-                        "bootstrap" : { "deps" :['jquery'] }
-                    }
-                });
-                
-                require(["jquery", "bootstrap", "bootbox"], function(jq, bs, bootbox) {
-                  var dialog = bootbox.dialog({
-                    message: '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>'
-                });
-                            
-                dialog.init(function(){
-                    setTimeout(function(){
-                        dialog.find('.bootbox-body').html('Success! Your log has been saved.');
-                    }, 3000);
-                });
-                });
+                    shim: {
+                      bootstrap: { deps: ["jquery"] },
+                    },
+                  });
+
+                  require(["jquery", "bootstrap", "bootbox"], function (
+                    jq,
+                    bs,
+                    bootbox
+                  ) {
+                    var dialog = bootbox.dialog({
+                      message:
+                        '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>',
+                    });
+
+                    dialog.init(function () {
+                      setTimeout(function () {
+                        dialog
+                          .find(".bootbox-body")
+                          .html("Success! Your log has been saved.");
+                      }, 3000);
+                    });
+                  });
                 }}
               >
                 Submit
               </button>
+              <Link
+                type="button"
+                className="btn btn-lg btn-warning resultsNewLogBtn"
+                to={{ pathname: "/Results" }}
+              >
+                Insights
+              </Link>
             </form>
           </div>
           <div className="col offset-md-1">
