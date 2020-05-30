@@ -9,6 +9,8 @@ export default function PastLogs() {
   const [logs, setLogs] = useState([]);
   const { user, getTokenSilently } = useContext(Auth0Context);
 
+  const [pastLogs, setPastLogs] = useState([]);
+
   async function getToken() {
     let token = await getTokenSilently();
     return token;
@@ -22,16 +24,22 @@ export default function PastLogs() {
       // });
 
       API.getpastlogs(user.sub, token).then((res) => {
-        for (let i = 0; i < res.data.length; i++) {
-          console.log(res.data[i].body);
-        }
-      }, []);
-    });
-  });
+        console.log("first one", res.data);
+        const pastStuff = res.data.map((log) => {
+          return log.body[0];
+        });
+        console.log(pastStuff);
 
-  useEffect(() => {
-    function pushpastlogs() {}
-  });
+        // const pastlogs = [];
+        // for (let i = 0; i < res.data.length; i++) {
+        //   pastlogs.push(res.data[i].body);
+        // }
+        // console.log(pastlogs);
+        setPastLogs(pastStuff);
+      });
+    });
+  }, [user]);
+
   return (
     <>
       <Header />
