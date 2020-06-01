@@ -10,7 +10,56 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between headerNav">
+          <Link to="/" id="logoHeader" className="navbar-item">
+            Psykhe
+          </Link>
+
+          {!isLoading && user && (
+            <form className="form-inline">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav mr-auto nav-pills">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link active" id="activePage">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/New" className="nav-link">
+                      New Log
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Past" className="nav-link">
+                      Past Logs
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Results" className="nav-link">
+                      Results
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        logout({ returnTo: window.location.origin })
+                      }
+                      className="navbar-item btn btn-light headerLogoutBtn"
+                    >
+                      {user.name}: Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          )}
+        </nav>
+      </header>
       {/* <!--Section with buttons--> */}
       <div className="container-fluid homeContainer">
         <div className="row" id="loggedInRowHome">
