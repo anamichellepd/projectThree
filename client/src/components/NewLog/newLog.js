@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 // import { useAuth0 } from "../contexts/auth0-context";
 import { Auth0Context } from "../../contexts/auth0-context";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "../../contexts/auth0-context";
 
 import API from "../../utils/API";
 
@@ -14,9 +15,60 @@ const NewLog = function () {
   const [body, setBody] = useState("");
   const { user, getTokenSilently } = useContext(Auth0Context);
 
+  const { isLoading, logout } = useAuth0();
+
   return (
     <>
-      <Header />
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between headerNav">
+          <Link to="/" id="logoHeader" className="navbar-item">
+            Psykhe
+          </Link>
+
+          {!isLoading && user && (
+            <form className="form-inline">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav mr-auto nav-pills">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/New" className="nav-link active" id="activePage">
+                      New Log
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Past" className="nav-link">
+                      Past Logs
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Results" className="nav-link">
+                      Results
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        logout({ returnTo: window.location.origin })
+                      }
+                      className="navbar-item btn btn-light headerLogoutBtn"
+                    >
+                      {user.name}: Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          )}
+        </nav>
+      </header>
       <div className="container-fluid newLogContainer">
         <div className="row">
           <div className="col offset-md-2">
@@ -73,7 +125,7 @@ const NewLog = function () {
                         dialog
                           .find(".bootbox-body")
                           .html("Success! Your log has been saved.");
-                      }, 3000);
+                      }, 2000);
                     });
                   });
                 }}
@@ -103,9 +155,9 @@ const NewLog = function () {
                 </p>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Cras justo odio</li>
-                <li className="list-group-item">Dapibus ac facilisis in</li>
-                <li className="list-group-item">Vestibulum at eros</li>
+                <li className="list-group-item">What is your favorite item you've bought this year?</li>
+                <li className="list-group-item">What is your absolute dream job?</li>
+                <li className="list-group-item">What's the best piece of advice you've ever been given?</li>
               </ul>
               <div className="card-body">
                 <a

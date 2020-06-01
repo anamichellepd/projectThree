@@ -27,6 +27,9 @@ nav .navbar-nav li .nav-link{
   nav .navbar-nav li .nav-link:hover{
     color: rgb(46, 30, 134) !important;
     }
+    .active {
+      background-color: #999898 !important;
+    }
 #logoHeader {
   font-family: 'Cinzel', serif;
   font-size: 30px;
