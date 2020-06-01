@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "../../contexts/auth0-context";
 
 export default function PastLogs() {
-  const [logs, setLogs] = useState([]);
+  const [text, setText] = useState([]);
   const { user, getTokenSilently } = useContext(Auth0Context);
 
   const [pastLogs, setPastLogs] = useState([]);
+  const [date, setDate] = useState([]);
 
   const { isLoading, logout } = useAuth0();
 
@@ -31,6 +32,10 @@ export default function PastLogs() {
         const pastStuff = res.data.map((log) => {
           return log.body[0];
         });
+        const pastDate = res.data.map((log) => {
+          return log.date[0];
+        });
+        console.log(pastDate);
         console.log(pastStuff);
 
         // const pastlogs = [];
@@ -38,7 +43,13 @@ export default function PastLogs() {
         //   pastlogs.push(res.data[i].body);
         // }
         // console.log(pastlogs);
+        setDate(pastDate);
         setPastLogs(pastStuff);
+
+        for (let i = 0; i < pastStuff.length; i++) {
+          setText(pastStuff[i]);
+          console.log({ text });
+        }
       });
     });
   }, [user]);
@@ -69,7 +80,11 @@ export default function PastLogs() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/Past" className="nav-link active" id="activePage">
+                    <Link
+                      to="/Past"
+                      className="nav-link active"
+                      id="activePage"
+                    >
                       Past Logs
                     </Link>
                   </li>
@@ -106,7 +121,16 @@ export default function PastLogs() {
           <div className="col ">
             {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
-              <form action="">
+              <ul>
+                <li>Date:</li>
+                <li>{date}</li>
+                <li>This text gathers all of them as one:</li>
+                <li>{pastLogs}</li>
+                <p></p>
+                <p>This text only seems to grab the last item of the array</p>
+                <li>{text} </li>
+              </ul>
+              {/* <form action="">
                 <div className="form-group">
                   <textarea
                     className="form-control textAreaPastLog"
@@ -121,7 +145,7 @@ export default function PastLogs() {
                 >
                   Insights
                 </Link>
-              </form>
+              </form> */}
             </div>
           </div>
           <div className="col-3"></div>
