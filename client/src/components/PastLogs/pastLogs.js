@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { Auth0Context } from "../../contexts/auth0-context";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "../../contexts/auth0-context";
+import PersonalityGraph from "../PersonalityGraph/PersonalityGraph";
 
 export default function PastLogs() {
   const [text, setText] = useState([]);
@@ -150,6 +151,7 @@ export default function PastLogs() {
           </div>
           <div className="col-3"></div>
         </div>
+        <PersonalityGraph pastLogs={pastLogs}/>
       </div>
     </>
   );
