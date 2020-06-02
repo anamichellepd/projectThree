@@ -35,7 +35,7 @@ nav .navbar-nav li .nav-link{
 }
 .headerLogoutBtn {
   color: white;
-  background-color: rgb(179, 179, 179);
+  background-color: rgb(175, 175, 175);
 }
 .headerLogoutBtn:hover {
   background-color: rgb(242, 253, 252) !important;
