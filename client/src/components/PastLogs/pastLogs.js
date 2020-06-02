@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./pastLogs.css";
-import Header from "../Header/Header";
 import API from "../../utils/API";
 import { Auth0Context } from "../../contexts/auth0-context";
 import { Link } from "react-router-dom";
@@ -112,39 +111,15 @@ export default function PastLogs() {
           )}
         </nav>
       </header>
+
       <div className="container-fluid pastLogsContainer">
         <div className="row">
           <div className="col offset-md-3">
             <h2 className="pastLogsH2">Past Logs</h2>
-          </div>
-        </div>
-        <div className="row" id="formRow">
-          <div className="col offset-md-3"></div>
-          <div className="col ">
-            {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
-              <ul>
-                {text}
-              </ul>
-              {/* <form action="">
-                <div className="form-group">
-                  <textarea
-                    className="form-control textAreaPastLog"
-                    id="body"
-                    rows="13"
-                  ></textarea>
-                </div>
-                <Link
-                  type="button"
-                  className="btn btn-lg btn-warning resultsPastLogsBtn"
-                  to={{ pathname: "/Results" }}
-                >
-                  Insights
-                </Link>
-              </form> */}
+              <ul className="list">{text}</ul>
             </div>
           </div>
-          <div className="col-3"></div>
         </div>
       </div>
     </>

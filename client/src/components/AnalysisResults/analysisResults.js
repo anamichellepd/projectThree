@@ -1,6 +1,5 @@
 import React from "react";
 import "./analysisResults.css";
-import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "../../contexts/auth0-context";
 
@@ -59,7 +58,9 @@ export default function AnalysisResults() {
           )}
         </nav>
       </header>
-      <div className="container-fluid  resultsContainer">
+
+
+      <div className="container-fluid resultsContainer">
         <div className="row">
           <div className="col">
             <h2 className="insightsTitle">Personality Insights</h2>
@@ -67,20 +68,13 @@ export default function AnalysisResults() {
         </div>
         <div className="row" id="valuesRow">
           <div className="col-md-4" id="valuesCol">
-            <h4 className="h4Results">(Values)</h4>
+            <h4 className="h4Results">Values</h4>
           </div>
           <div className="col-md-4" id="personalityCol">
-            <h4 className="h4Results">(Personality)</h4>
+            <h4 className="h4Results">Personality</h4>
           </div>
           <div className="col-md-4" id="likelyOrUnlikelyCol">
-            <h4 className="h4Results">(You are likely/unlikely)</h4>
-          </div>
-        </div>
-        <div className="row" id="rowWithButton">
-          <div className="col-md-4">
-            <button type="button" className="btn btn-primary shareBtn">
-              Share with a Friend
-            </button>
+            <h4 className="h4Results">You are likely/unlikely</h4>
           </div>
         </div>
       </div>

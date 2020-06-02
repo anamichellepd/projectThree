@@ -6,24 +6,22 @@
 }
 .titleOnLanding {
   font-family: 'Cinzel', serif;
-  font-size: 100px;
+  font-size: 70px;
 }
 .landingP1 {
   font-family: 'Sarabun', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
 }
 .landingP2 {
   font-family: 'Cinzel', serif;
-  font-size: 22px;
+  font-size: 12px;
 }
 .secondLandingRow {
   text-align: center;
-  margin-top: 5px;
 }
 .formWithLogin {
   background-image: url(https://s3.pixers.pics/pixers/700/FO/25/57/46/74/700_FO25574674_74d0194e7739d69bf3005afcc7ebdbe3.jpg);
   background-size: 100% 100%;
-  width: 1100px;
   height: 500px;
   position: relative;
 }
@@ -50,7 +48,6 @@
   background-color: #3f51b5;
 }
 .carousel-inner img {
-  width: 1100px;
 height: 500px;
   -webkit-filter: brightness(90%);
   filter: brightness(85%);

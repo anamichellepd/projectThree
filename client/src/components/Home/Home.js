@@ -1,7 +1,6 @@
 import React from "react";
 import { useAuth0 } from "../../contexts/auth0-context";
 import "./Home.css";
-import Header from "../Header/Header";
 import history from "../../history";
 import { Link } from "react-router-dom";
 

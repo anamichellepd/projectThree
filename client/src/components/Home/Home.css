@@ -45,35 +45,6 @@ nav .navbar-nav li .nav-link{
 }
 
 
-.resultsContainer {
-  background-image: url("../../images/130979.jpg");
-  /* background-size: cover; */
-  /* /* background-size: auto 100%; */
-  background-size: 100% 100%;
-  /* -webkit-filter: brightness(90%);*/
-  /* filter: brightness(105%);  */
-}
-.insightsTitle {
-  font-family: 'Niramit', sans-serif;
-  color: rgb(92, 162, 255);
-  text-decoration: underline;
-  margin: 20px 0px 0px 20px;
-}
-.h4Results {
-  font-family: 'Lexend Deca', sans-serif;
-}
-#valuesRow {
-  margin-top: 140px;
-text-align: center;
-}
-#rowWithButton {
-  margin-top: 640px;
-}
-.shareBtn {
-  margin-bottom: 100px;
-}
-
-
 .homeH4 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
@@ -98,14 +69,14 @@ text-align: center;
   height: 50px;
 }
 #rowOfBtns {
-  margin-top: 535px;
+  margin-top: 335px;
   text-align: center;
 }
 .newHomeBtn {
   color: #4e342e;
   border-color: #4e342e;
   font-weight: bold;
-  padding: 40px;
+  padding: 30px;
   margin-bottom: 300px;
 }
 .newHomeBtn:hover {
@@ -116,7 +87,7 @@ text-align: center;
   color: #1c5a20;
   border-color: #1c5a20;
   font-weight: bold;
-  padding: 40px;
+  padding: 30px;
   margin-bottom: 300px;
 }
 .pastHomeBtn:hover {
@@ -127,7 +98,7 @@ text-align: center;
   color: #636363;
   border-color: #636363;
   font-weight: bold;
-  padding: 40px;
+  padding: 30px;
   margin-bottom: 300px;
 }
 .resultsHomeBtn:hover {
