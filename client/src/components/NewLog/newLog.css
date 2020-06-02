@@ -50,6 +50,7 @@ nav .navbar-nav li .nav-link:hover {
   background-size: cover; */
   /* -webkit-filter: brightness(90%);
   filter: brightness(90%);*/
+  height: 700px;
 }
 .newLogH2 {
   font-family: "Niramit", sans-serif;
@@ -89,7 +90,7 @@ nav .navbar-nav li .nav-link:hover {
 }
 .newLogCard {
   margin-top: 25px;
-  width: 400px;
+  width: 300px;
 }
 .card-title,
 .card-text {

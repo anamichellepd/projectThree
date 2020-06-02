@@ -50,6 +50,7 @@ nav .navbar-nav li .nav-link:hover {
   background-size: cover; */
   /* -webkit-filter: brightness(90%);
   filter: brightness(90%);*/
+  height: 700px;
 }
 .pastLogsH2 {
   font-family: "Niramit", sans-serif;

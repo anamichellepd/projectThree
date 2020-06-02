@@ -135,7 +135,7 @@ const NewLog = function () {
                   Submit
                 </button>
                 </div>
-                <div className="col-2 col-md-2 offset-md-2">
+                <div className="col-2 col-md-2 offset-md-3">
                 <Link
                   type="button"
                   className="btn btn-lg btn-warning resultsNewLogBtn"
