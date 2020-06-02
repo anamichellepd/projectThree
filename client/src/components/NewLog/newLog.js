@@ -71,12 +71,12 @@ const NewLog = function () {
 
       <div className="container-fluid newLogContainer">
         <div className="row">
-          <div className="col-md-2 offset-md-2">
+          <div className="col-2 col-md-2 offset-md-2">
             <h2 className="newLogH2">Write New Log</h2>
           </div>
         </div>
         <div className="row" id="describeDayRow">
-          <div className="col-md-2 offset-md-2">
+          <div className="col-2 col-md-2 offset-md-2">
             <h4 className="newLogH4">Describe Your Day</h4>
             <form action="" id="paperNewLog">
               <div className="form-group">
@@ -141,7 +141,7 @@ const NewLog = function () {
               </Link>
             </form>
           </div>
-          <div className="col-md-2 offset-md-1">
+          <div className="col-2 col-md-2 offset-md-2">
             <div className="card newLogCard">
               <img
                 src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/10/15/0/fnd_Ice-Cubes-thinkstock.jpg.rend.hgtvcom.616.462.suffix/1413404558868.jpeg"
