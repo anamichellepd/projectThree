@@ -72,22 +72,15 @@ nav .navbar-nav li .nav-link:hover {
   margin-bottom: 10px;
 } */
 #inputGroupPastLog {
+  margin-top: 40px;
   width: 600px;
-  height: 785px;
+  height: 600px;
   word-wrap: break-word;
+}
+.list {
+  font-family: "Petit Formal Script", cursive;
+  font-size: 20px;
 }
 ul li {
   list-style-type: none;
-}
-/* #textAreaPastLog {
-  pointer-events: none;
-  background: rgba(255, 255, 255, 0.5);
-  margin-bottom: 200px;
-} */
-.resultsPastLogsBtn {
-  font-size: 20px;
-  margin-top: 150px;
-  padding: 15px;
-  width: 105px;
-  margin-bottom: 97px;
 }
