@@ -46,10 +46,12 @@ export default function PastLogs() {
         setDate(pastDate);
         setPastLogs(pastStuff);
 
+        var logsArray = [];
         for (let i = 0; i < pastStuff.length; i++) {
-          setText(pastStuff[i]);
-          console.log({ text });
+          var logs = <li>{"\n" + pastDate[i] + " " + pastStuff[i]}</li>;
+          logsArray.push(logs);
         }
+        setText(logsArray);
       });
     });
   }, [user]);
@@ -122,13 +124,7 @@ export default function PastLogs() {
             {/* disabled text area of past log */}
             <div className="input-group" id="inputGroupPastLog">
               <ul>
-                <li>Date:</li>
-                <li>{date}</li>
-                <li>This text gathers all of them as one:</li>
-                <li>{pastLogs}</li>
-                <p></p>
-                <p>This text only seems to grab the last item of the array</p>
-                <li>{text} </li>
+                {text}
               </ul>
               {/* <form action="">
                 <div className="form-group">

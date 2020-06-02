@@ -44,34 +44,6 @@ nav .navbar-nav li .nav-link:hover {
   background-color: rgb(242, 253, 252) !important;
 }
 
-.resultsContainer {
-  background-image: url("../../images/130979.jpg");
-  /* background-size: cover; */
-  /* /* background-size: auto 100%; */
-  background-size: 100% 100%;
-  /* -webkit-filter: brightness(90%);*/
-  /* filter: brightness(105%);  */
-}
-.insightsTitle {
-  font-family: "Niramit", sans-serif;
-  color: rgb(92, 162, 255);
-  text-decoration: underline;
-  margin: 20px 0px 0px 20px;
-}
-.h4Results {
-  font-family: "Lexend Deca", sans-serif;
-}
-#valuesRow {
-  margin-top: 140px;
-  text-align: center;
-}
-#rowWithButton {
-  margin-top: 640px;
-}
-.shareBtn {
-  margin-bottom: 100px;
-}
-
 .pastLogsContainer {
   background-image: url("../../images/130979.jpg");
   background-repeat: no-repeat;
@@ -102,12 +74,16 @@ nav .navbar-nav li .nav-link:hover {
 #inputGroupPastLog {
   width: 600px;
   height: 785px;
+  word-wrap: break-word;
 }
-#textAreaPastLog {
+ul li {
+  list-style-type: none;
+}
+/* #textAreaPastLog {
   pointer-events: none;
   background: rgba(255, 255, 255, 0.5);
   margin-bottom: 200px;
-}
+} */
 .resultsPastLogsBtn {
   font-size: 20px;
   margin-top: 150px;
