@@ -122,7 +122,7 @@ export default function PastLogs() {
             </div>
           </div>
         </div>
-        <PersonalityGraph pastLogs={pastLogs}/>
+        {/* <PersonalityGraph pastLogs={pastLogs}/> */}
       </div>
     </>
   );
