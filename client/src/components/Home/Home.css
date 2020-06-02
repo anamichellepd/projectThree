@@ -14,23 +14,23 @@
 }
 .navbar-item,
 .nav-link {
-  font-family: 'Sarabun', sans-serif;
+  font-family: "Sarabun", sans-serif;
   font-size: 22px;
   margin-left: 30px;
 }
-nav .navbar-nav li .nav-link{
+nav .navbar-nav li .nav-link {
   color: rgb(140, 255, 230) !important;
-  }
-  nav .navbar-nav li .nav-link:hover{
-    color: rgb(46, 30, 134) !important;
-    }
-    #activePage {
-      background-color: #2d3ed6 !important;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+}
+nav .navbar-nav li .nav-link:hover {
+  color: rgb(46, 30, 134) !important;
+}
+#activePage {
+  background-color: #2d3ed6 !important;
+  border-radius: 10px;
+  font-weight: bold;
+}
 #logoHeader {
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   font-size: 30px;
 }
 .headerLogoutBtn {
@@ -58,7 +58,7 @@ nav .navbar-nav li .nav-link{
   background-size: 100% 100%;
   /* -webkit-filter: brightness(90%);*/
   /* filter: brightness(105%);  */
-  height: 700px;
+  height: 800px;
 }
 .homeImg {
   margin-top: 10px;
@@ -67,7 +67,7 @@ nav .navbar-nav li .nav-link{
   height: 50px;
 }
 #rowOfBtns {
-  margin-top: 360px;
+  margin-top: 420px;
   text-align: center;
 }
 .newHomeBtn {

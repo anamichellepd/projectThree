@@ -50,7 +50,7 @@ nav .navbar-nav li .nav-link:hover {
   background-size: cover; */
   /* -webkit-filter: brightness(90%);
   filter: brightness(90%);*/
-  height: 700px;
+  height: 800px;
 }
 .pastLogsH2 {
   font-family: "Niramit", sans-serif;
@@ -59,7 +59,7 @@ nav .navbar-nav li .nav-link:hover {
   margin-top: 60px;
 }
 #formRow {
-  margin-top: 80px;
+  margin-top: 90px;
 }
 /* .selectDateH4 {
   font-family: 'Lexend Deca', sans-serif;
