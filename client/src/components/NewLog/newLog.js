@@ -68,7 +68,6 @@ const NewLog = function () {
         </nav>
       </header>
 
-
       <div className="container-fluid newLogContainer">
         <div className="row">
           <div className="col-2 col-md-2 offset-md-2">
@@ -87,59 +86,65 @@ const NewLog = function () {
                   onChange={(e) => setBody(e.target.value)}
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary submitNewLogBtn"
-                onClick={async (e) => {
-                  e.preventDefault();
-                  let token = await getTokenSilently();
-
-                  API.saveLog(body, token).then((response) => {
-                    console.log(response);
-                  });
-                  require.config({
-                    paths: {
-                      jquery:
-                        "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
-                      bootstrap:
-                        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
-                      bootbox: "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox",
-                    },
-                    shim: {
-                      bootstrap: { deps: ["jquery"] },
-                    },
-                  });
-
-                  require(["jquery", "bootstrap", "bootbox"], function (
-                    jq,
-                    bs,
-                    bootbox
-                  ) {
-                    var dialog = bootbox.dialog({
-                      message:
-                        '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>',
-                    });
-
-                    dialog.init(function () {
-                      setTimeout(function () {
-                        dialog
-                          .find(".bootbox-body")
-                          .html("Success! Your log has been saved.");
-                      }, 2000);
-                    });
-                  });
-                }}
-              >
-                Submit
-              </button>
-              <Link
-                type="button"
-                className="btn btn-lg btn-warning resultsNewLogBtn"
-                to={{ pathname: "/Results" }}
-              >
-                Insights
-              </Link>
             </form>
+            <div className="row" id="describeDayRow">
+              <div className="col-2 col-md-2 offset-md-2">
+                <button
+                  type="submit"
+                  className="btn btn-primary submitNewLogBtn"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    let token = await getTokenSilently();
+
+                    API.saveLog(body, token).then((response) => {
+                      console.log(response);
+                    });
+                    require.config({
+                      paths: {
+                        jquery:
+                          "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery",
+                        bootstrap:
+                          "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min",
+                        bootbox: "//cdn.jsdelivr.net/bootbox/4.3.0/bootbox",
+                      },
+                      shim: {
+                        bootstrap: { deps: ["jquery"] },
+                      },
+                    });
+
+                    require(["jquery", "bootstrap", "bootbox"], function (
+                      jq,
+                      bs,
+                      bootbox
+                    ) {
+                      var dialog = bootbox.dialog({
+                        message:
+                          '<p><i class="fa fa-spin fa-spinner"></i>Saving your log...</p>',
+                      });
+
+                      dialog.init(function () {
+                        setTimeout(function () {
+                          dialog
+                            .find(".bootbox-body")
+                            .html("Success! Your log has been saved.");
+                        }, 2000);
+                      });
+                    });
+                  }}
+                >
+                  Submit
+                </button>
+                </div>
+                <div className="col-2 col-md-2 offset-md-2">
+                <Link
+                  type="button"
+                  className="btn btn-lg btn-warning resultsNewLogBtn"
+                  to={{ pathname: "/Results" }}
+                >
+                  Insights
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="col-2 col-md-2 offset-md-2">
             <div className="card newLogCard">
@@ -155,9 +160,15 @@ const NewLog = function () {
                 </p>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">What is your favorite item you've bought this year?</li>
-                <li className="list-group-item">What is your absolute dream job?</li>
-                <li className="list-group-item">What's the best piece of advice you've ever been given?</li>
+                <li className="list-group-item">
+                  What is your favorite item you've bought this year?
+                </li>
+                <li className="list-group-item">
+                  What is your absolute dream job?
+                </li>
+                <li className="list-group-item">
+                  What's the best piece of advice you've ever been given?
+                </li>
               </ul>
               <div className="card-body">
                 <a
